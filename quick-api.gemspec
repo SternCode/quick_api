@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Quick::Api::VERSION
   spec.authors       = ["SternCode"]
   spec.email         = ["sterncode@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Make your API rest quick}
+  spec.summary       = %q{Make your API rest quick}
   spec.homepage      = ""
   spec.license       = "MIT"
 
