@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'quick/api/version'
+require 'quick_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "quick-api"
-  spec.version       = Quick::Api::VERSION
+  spec.name          = "quick_api"
+  spec.version       = QuickApi::VERSION
   spec.authors       = ["SternCode"]
   spec.email         = ["sterncode@gmail.com"]
   spec.description   = %q{Make your API rest quick}
