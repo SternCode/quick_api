@@ -6,8 +6,8 @@ require 'quick/api/version'
 Gem::Specification.new do |spec|
   spec.name          = "quick-api"
   spec.version       = Quick::Api::VERSION
-  spec.authors       = ["Daniel Alvarez Garcia"]
-  spec.email         = ["dalvgar@gmail.com"]
+  spec.authors       = ["SternCode"]
+  spec.email         = ["sterncode@gmail.com"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""
