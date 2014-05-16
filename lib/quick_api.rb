@@ -1,11 +1,12 @@
-
 require 'active_support'
 
-require 'i18n'
-require "quick_api/version"
-
-#require 'quick_api/validation'
+require 'quick_api/version'
 
 module QuickApi
 
+end
+
+# include in AR
+ActiveSupport.on_load(:active_record) do
+  ActiveRecord::Base.send(:include, QuickApi)
 end
