@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quick_api (0.0.4)
+    quick_api (0.0.5)
 
 GEM
   remote: https://rubygems.org/
