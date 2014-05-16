@@ -146,7 +146,7 @@ This is the only one that **don't overrides all the defaults**, only add one mor
 
 ##### Fields
 
-If you specify the Fields then all the quick\_api\_\* definitions won't show.
+If you specify the **fields** then all the quick\_api\_\* definitions won't show.
 
 ```ruby
   class User
@@ -170,7 +170,7 @@ If you specify the Fields then all the quick\_api\_\* definitions won't show.
 
 With this you can change the default behavior when calling the ```.to_api()``` at the Model.
 
-At the momnet we only support **relations**. With this you specify if you want to use the relations you specify in the model or not.
+At the moment we only support **relations**. With this you specify if you want to use the relations you specify in the model or not.
 
 ```ruby
   class User
