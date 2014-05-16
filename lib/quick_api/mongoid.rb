@@ -16,7 +16,7 @@ module QuickApi
 
     module ClassMethods
 
-      def quick_api_attrributes(*names)
+      def quick_api_attributes(*names)
         self.quick_api_attributes = names
       end
 
