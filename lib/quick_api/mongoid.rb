@@ -1,5 +1,3 @@
-require 'quick_api'
-
 module QuickApi
   module Mongoid
     extend ActiveSupport::Concern

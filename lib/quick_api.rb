@@ -1,6 +1,7 @@
 require 'active_support'
 
 require 'quick_api/version'
+require 'quick_api/mongoid'
 
 module QuickApi
 
