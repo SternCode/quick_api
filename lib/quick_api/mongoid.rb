@@ -3,49 +3,49 @@ module QuickApi
     extend ActiveSupport::Concern
 
     included do
-      class_attribute :quick_api_attributes
       # class_attribute :quick_api_methods
-      class_attribute :quick_api_has_many
-      class_attribute :quick_api_belongs_to
-      class_attribute :quick_api_has_one
-      class_attribute :quick_api_has_and_belongs_to_many
-      class_attribute :quick_api_embeds_many
-      class_attribute :quick_api_embedded_in
-      class_attribute :quick_api_embeds_one
+      class_attribute :q_api_attributes
+      class_attribute :q_api_has_many
+      class_attribute :q_api_belongs_to
+      class_attribute :q_api_has_one
+      class_attribute :q_api_has_and_belongs_to_many
+      class_attribute :q_api_embeds_many
+      class_attribute :q_api_embedded_in
+      class_attribute :q_api_embeds_one
     end
 
     module ClassMethods
 
       def quick_api_attributes(*names)
-        self.quick_api_attributes = names
+        self.q_api_attributes = names
       end
 
       def quick_api_has_many(*relations)
-        self.quick_api_has_many = relations
+        self.q_api_has_many = relations
       end
 
       def quick_api_belongs_to(*relations)
-        self.quick_api_belongs_to = relations
+        self.q_api_belongs_to = relations
       end
 
       def quick_api_has_one(*relations)
-        self.quick_api_has_one = relations
+        self.q_api_has_one = relations
       end
 
       def quick_api_has_and_belongs_to_many(*relations)
-        self.quick_api_has_and_belongs_to_many = relations
+        self.q_api_has_and_belongs_to_many = relations
       end
 
       def quick_api_embeds_many(*relations)
-        self.quick_api_embeds_many = relations
+        self.q_api_embeds_many = relations
       end
 
       def quick_api_embedded_in(*relations)
-        self.quick_api_embedded_in = relations
+        self.q_api_embedded_in = relations
       end
 
       def quick_api_embeds_one(*relations)
-        self.quick_api_embeds_one = relations
+        self.q_api_embeds_one = relations
       end
 
       # def quick_api_methods(*methods)
@@ -58,7 +58,7 @@ module QuickApi
       if options[:fields]
         api_fields = options[:fields]
       else
-        api_fields = self.quick_api_attributes.nil? ? [] : self.quick_api_attributes
+        api_fields = self.q_api_attributes.nil? ? [] : self.q_api_attributes
       end
       api_fields.each do |api_field|
         begin
@@ -88,13 +88,13 @@ module QuickApi
       # end 
 
       if options[:relations] == true
-          result = api_many_options(result, self.quick_api_has_many)                if self.quick_api_has_many
-          result = api_belongs_or_one_options(result, self.quick_api_belongs_to)    if self.quick_api_belongs_to
-          result = api_belongs_or_one_options(result, self.quick_api_has_one)       if self.quick_api_has_one
-          result = api_many_options(result, self.quick_api_has_and_belongs_to_many) if self.quick_api_has_and_belongs_to_many
-          result = api_many_options(result, self.quick_api_embeds_many)             if self.quick_api_embeds_many
-          result = api_belongs_or_one_options(result, self.quick_api_embedded_in)   if self.quick_api_embedded_in
-          result = api_belongs_or_one_options(result, self.quick_api_embeds_one)    if self.quick_api_embeds_one
+          result = api_many_options(result, self.q_api_has_many)                if self.q_api_has_many
+          result = api_belongs_or_one_options(result, self.q_api_belongs_to)    if self.q_api_belongs_to
+          result = api_belongs_or_one_options(result, self.q_api_has_one)       if self.q_api_has_one
+          result = api_many_options(result, self.q_api_has_and_belongs_to_many) if self.q_api_has_and_belongs_to_many
+          result = api_many_options(result, self.q_api_embeds_many)             if self.q_api_embeds_many
+          result = api_belongs_or_one_options(result, self.q_api_embedded_in)   if self.q_api_embedded_in
+          result = api_belongs_or_one_options(result, self.q_api_embeds_one)    if self.q_api_embeds_one
       end
 
       result = api_set_options(result, options)
