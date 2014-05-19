@@ -112,6 +112,13 @@ Example:
 
 With this you say that, when calling ```user.to_api``` it will return a hash of attributes like this: ```{ name: "", username: "", email: ""}```
 
+When the attribut is the class Date, DateTime or TimeWithZone, returns iso8601
+Exemple:
+
+```ruby
+  { created_at: "2014-05-05T11:11:50+02:00" }
+```
+
 #### Override the Defaults
 
 If you want you can override the defaults definitions in the model at the time you call ```.to_api``` on it, by passing some parameters to it.
