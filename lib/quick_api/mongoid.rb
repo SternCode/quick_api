@@ -54,7 +54,7 @@ module QuickApi
 
     end
 
-    def to_api(options = {relations: true}, result = {})
+    def to_api(options = {options: {relations: true}}, result = {})
       if options[:fields]
         api_fields = options[:fields]
       else
@@ -91,7 +91,7 @@ module QuickApi
       #   result = api_method_options(result, self.quick_api_methods)
       # end 
 
-      if options[:relations] == true
+      if options[:options][:relations] == true
           result = api_many_options(result, self.q_api_has_many)                if self.q_api_has_many
           result = api_belongs_or_one_options(result, self.q_api_belongs_to)    if self.q_api_belongs_to
           result = api_belongs_or_one_options(result, self.q_api_has_one)       if self.q_api_has_one
