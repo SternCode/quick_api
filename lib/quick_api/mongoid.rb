@@ -76,7 +76,7 @@ module QuickApi
           end
         rescue
           begin
-            if (self.send(api_field)).class == ActiveSupport::TimeWithZone) or (self.send(api_field)).class == Date) or (self.send(api_field)).class == DateTime)
+            if (self.send(api_field)).class == ActiveSupport::TimeWithZone or (self.send(api_field)).class == Date or (self.send(api_field)).class == DateTime
               result[api_field] = self.send(api_field).to_time.iso8601
             else
               result[api_field] = self.send(api_field)
