@@ -76,7 +76,11 @@ module QuickApi
           end
         rescue
           begin
-            result[api_field] = self.send(api_field)
+            if (self.send(api_field)).class == ActiveSupport::TimeWithZone) or (self.send(api_field)).class == Date) or (self.send(api_field)).class == DateTime)
+              result[api_field] = self.send(api_field).to_time.iso8601
+            else
+              result[api_field] = self.send(api_field)
+            end
           rescue
             raise "The field #{api_field} don't exist in this Model"
           end
